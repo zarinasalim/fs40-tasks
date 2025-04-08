@@ -1,0 +1,62 @@
+li:first-child {
+    background-color: black;
+    color: white;
+}
+li {
+    list-style-position: inside;
+    padding: 15px;
+}
+li:nth-child(2){
+background-color:#C0C0C0 ;
+color: white;
+}
+li:nth-child(3){
+    background-color:#808080 ;
+    color: white;
+}
+li:nth-child(4) {
+    background-color:#3498db ;
+    color: white;
+}
+li:nth-child(5){
+    background-color:#800000 ;
+    color:white
+}
+li:nth-child(6){
+    background-color:#FF0000 ;
+    color:white
+}
+li:nth-child(7){
+    background-color:#800080 ;
+    color:white
+}
+li:nth-child(8){
+    background-color:#FF00FF ;
+    color: black;
+}
+li:nth-child(9){
+    background-color: #008000;
+    color:white ;
+}
+li:nth-child(10){
+    background-color:#00FF00 ;
+    color:black
+}
+
+li:nth-child(11){
+    background-color:#808000 ;
+    color:white
+}
+li:nth-child(12){
+    background-color: ;
+}
+li:nth-child(13)
+li:nth-child(14)
+li:nth-child(15)
+li:nth-child(16)
+li:nth-child(17)
+li:nth-child(18)
+li:last-child{
+    background-color: #00FFFF;
+    color: white;
+}
