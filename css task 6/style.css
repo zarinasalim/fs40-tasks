@@ -1,0 +1,29 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 65%;
+    max-width: 100%;
+    min-width: 430px;
+    margin: auto;
+}
+table{
+    border-radius: 5px;
+    width: 100%;
+    background-color: rgb(244, 155, 229);
+    border-collapse: collapse;
+}
+h1, h3{
+    color: blueviolet;
+}
+td{ border: 2px solid rgb(17, 49, 232);
+padding: 10px;
+}
+p,ul{
+    box-sizing: border-box;
+    background-color: rgb(253, 144, 235) ;
+    padding: 30px;
+    border: 2px solid rgb(17, 49, 232);
+    border-radius: 10px ;
+}
+ul{
+    list-style-type: square;
+}
