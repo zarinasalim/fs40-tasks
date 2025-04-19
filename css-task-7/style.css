@@ -1,0 +1,27 @@
+.card{
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid; color: rgb(190, 13, 229);
+    border-radius: 10px;
+    width: 20%;
+    height: 270px;
+    display: inline-block;
+    box-shadow: 0 0 10px red;
+    overflow: hidden;
+}
+p{
+    color: blue;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.card:hover{
+    background-color: rgb(238, 119, 218);
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.1);}
+
+    h1{
+        color: blueviolet;
+        font-size: 35px;
+        font-family: 'Courier New', Courier, monospace;
+    }
