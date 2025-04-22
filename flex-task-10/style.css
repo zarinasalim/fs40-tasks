@@ -1,0 +1,29 @@
+section{
+    width: 80%;
+    max-width: 1320px;
+    margin-inline: auto;
+}
+body{
+    margin: 0;
+}
+.header-item{
+    height: 55px;
+    background-color: #000;
+    margin-bottom: 23px;
+}
+.box-item{
+    height: 227px;
+    background-color: lightpink;
+    border-radius: 10px;
+    margin-top: 0;
+    margin-right: 13px;
+    margin-bottom: 27px;
+    margin-left: 13px;
+}
+.footer-item{
+    width: 80%;
+    height: 45px;
+    margin: 70px auto;
+    border-radius: 10px;
+    background-color: plum;
+}
