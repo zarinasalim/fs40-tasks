@@ -487,9 +487,8 @@ const pizzaData = [
   }
 ];
 
-    const productsElem = document.getElementById("products");
-    const basketCountElem = document.getElementById("basketCount");
-    const favoriteCountElem = document.getElementById("favoriteCount");
+    const basketItemsElem = document.getElementById("basketItems");
+    const basketTotalElem = document.getElementById("basketTotal");
 
     function getBasket() {
       return JSON.parse(localStorage.getItem("basket") || "{}");
@@ -497,120 +496,64 @@ const pizzaData = [
     function setBasket(basket) {
       localStorage.setItem("basket", JSON.stringify(basket));
     }
-    function getFavorites() {
-      return JSON.parse(localStorage.getItem("favorites") || "[]");
-    }
-    function setFavorites(favorites) {
-      localStorage.setItem("favorites", JSON.stringify(favorites));
-    }
 
-    function renderProducts() {
-      const favorites = getFavorites();
-      productsElem.innerHTML = "";
-
-      pizzaData.forEach(product => {
-        const isFav = favorites.includes(product.id);
-
-        productsElem.innerHTML += `
-          <div class="bg-white rounded-md shadow-md p-4 hover:shadow-lg transition relative flex flex-col">
-            <img src="${product.img}" alt="${product.name}" class="w-full h-48 object-cover rounded mb-4" />
-            <h2 class="font-bold text-lg">${product.name}</h2>
-            <p class="text-red-800 ">${product.price.toFixed(2)} AZN</p>
-            <div class="text-sm text-gray-500 mb-2">${product.country}</div>
-
-            <div class="mt-auto flex flex-wrap gap-2 items-center justify-between">
-              <button onclick="addToBasket('${product.id}')" class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 transition flex items-center space-x-2">
-                <i class="fas fa-shopping-cart"></i><span>Əlavə et</span>
-              </button>
-              <button onclick="toggleFavorite('${product.id}')" class="text-2xl focus:outline-none ${isFav ? 'text-yellow-400' : 'text-gray-400 hover:text-yellow-400'}">
-                <i class="fas fa-star"></i>
-              </button>
-              <button onclick="toggleDetails('${product.id}')" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition">
-                Ətraflı
-              </button>
+  
+    function renderBasket() {
+      const basket = getBasket();
+      basketItemsElem.innerHTML = "";
+      let total = 0;
+      if (Object.keys(basket).length === 0) {
+        basketItemsElem.innerHTML = "<p class='text-center text-gray-600'>Səbət boşdur</p>";
+        basketTotalElem.textContent = "Total: 0 AZN";
+        return;
+      }
+      for (const id in basket) {
+        const product = pizzaData.find(p => p.id === id);
+        const qty = basket[id];
+        total += product.price * qty;
+        basketItemsElem.innerHTML += `
+          <div class="flex items-center justify-between border-b py-2">
+            <div class="flex items-center space-x-4">
+              <img src="${product.img}" alt="${product.name}" class="w-16 h-16 object-cover rounded" />
+              <div>
+                <p class="font-semibold">${product.name}</p>
+                <p>${product.price.toFixed(2)} AZN</p>
+              </div>
             </div>
-
-            <div id="details-${product.id}" class="hidden mt-4 bg-gray-100 rounded p-3 text-sm text-gray-700">
-              <p><strong>Təsvir:</strong> ${product.dsc}</p>
-              <p><strong>Reytinq:</strong> ${product.rate}/5</p>
-              <p><strong>Ölkə:</strong> ${product.country}</p>
+            <div class="flex items-center space-x-2">
+              <button onclick="changeQuantity('${id}', -1)" class="bg-red-500 text-white px-2 rounded hover:bg-red-600">-</button>
+              <span>${qty}</span>
+              <button onclick="changeQuantity('${id}', 1)" class="bg-green-600 text-white px-2 rounded hover:bg-green-700">+</button>
+              <button onclick="removeItem('${id}')" class="ml-4 text-red-600 hover:text-red-800" title="Sil">
+                <i class="fas fa-trash"></i>
+              </button>
             </div>
           </div>
         `;
-      });
-
-      updateCounts();
-    }
-
-    function addToBasket(id) {
-      const basket = getBasket();
-      basket[id] = (basket[id] || 0) + 1;
-      setBasket(basket);
-      updateCounts();
-      alert("Məhsul səbətə əlavə edildi!");
-    }
-
-    function toggleFavorite(id) {
-      let favorites = getFavorites();
-      const basket = getBasket();
-
-      if (favorites.includes(id)) {
-        favorites = favorites.filter(favId => favId !== id);
-        if (basket[id]) {
-          basket[id]--;
-          if (basket[id] <= 0) {
-            delete basket[id];
-          }
-        }
-      } else {
-        favorites.push(id);
-        basket[id] = (basket[id] || 0) + 1;
       }
-
-      setFavorites(favorites);
-      setBasket(basket);
-      renderProducts();
-      updateCounts();
+      basketTotalElem.textContent = Total: ${total.toFixed(2)} AZN;
     }
 
-    function toggleDetails(id) {
-  const product = pizzaData.find(p => p.id === id);
-  if (!product) return;
 
-  const modal = document.getElementById("modal");
-  const modalContent = document.getElementById("modalContent");
-
-
-  modalContent.innerHTML = `
-    <img src="${product.img}" alt="${product.name}" class="w-full h-48 object-cover rounded mb-4" />
-    <h2 class="text-2xl font-bold mb-2">${product.name}</h2>
-    <p class="mb-1"><strong>Təsvir:</strong> ${product.dsc}</p>
-    <p class="mb-1"><strong>Qiymət:</strong> ${product.price.toFixed(2)} AZN</p>
-    <p class="mb-1"><strong>Reytinq:</strong> ${product.rate}/5</p>
-    <p class="mb-1"><strong>Ölkə:</strong> ${product.country}</p>
-  `;
-
-
-  modal.classList.remove("hidden");
-  modal.classList.add("flex");
-}
-
-
-
-
-document.getElementById("modalCloseBtn").addEventListener("click", () => {
-  const modal = document.getElementById("modal");
-  modal.classList.add("hidden");
-  modal.classList.remove("flex");
-});
-
-
-    function updateCounts() {
+    function changeQuantity(id, change) {
       const basket = getBasket();
-      const favorites = getFavorites();
-      const basketCount = Object.values(basket).reduce((a, b) => a + b, 0);
-      basketCountElem.textContent = basketCount;
-      favoriteCountElem.textContent = favorites.length;
+      if (!basket[id]) return;
+      basket[id] += change;
+      if (basket[id] <= 0) {
+        delete basket[id];
+      }
+      setBasket(basket);
+      renderBasket();
     }
 
-    renderProducts();
+    
+    function removeItem(id) {
+      const basket = getBasket();
+      if (basket[id]) {
+        delete basket[id];
+        setBasket(basket);
+        renderBasket();
+      }
+    }
+
+    renderBasket();
