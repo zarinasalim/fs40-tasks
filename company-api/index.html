@@ -7,94 +7,97 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="bg-gray-100 p-6">
-<div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 py-8">
-    <div class="border-b border-gray-900/10 pb-12">
-      <h2 class="text-base/7 font-semibold text-gray-900">Company Information</h2>
 
-      <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-        <div class="sm:col-span-3">
-          <label for="companyName" class="block text-sm/6 font-medium text-gray-900">Company name</label>
-          <div class="mt-2">
-            <input type="text" name="companyName" id="companyName" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+
+    <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 py-8">
+      <form>
+        <div class="border-b border-gray-900/10 pb-12 bg-white rounded-lg p-6 max-w-4xl w-full shadow-lg">
+          <h2 class="text-base/7 font-semibold text-gray-900">Company Information</h2>
+
+          <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <div class="sm:col-span-3">
+              <label for="companyName" class="block text-sm/6 font-medium text-gray-900">Company name</label>
+              <div class="mt-2">
+                <input type="text" name="companyName" id="companyName" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+              </div>
+            </div>
+
+            <div class="sm:col-span-3">
+              <label for="contactName" class="block text-sm/6 font-medium text-gray-900">Contact Name</label>
+              <div class="mt-2">
+                <input type="text" name="contactName" id="contactName" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+              </div>
+            </div>
+
+            <div class="sm:col-span-4">
+              <label for="contactTitle" class="block text-sm/6 font-medium text-gray-900">Contact Title</label>
+              <div class="mt-2">
+                <input id="contactTitle" name="contactTitle" type="text" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+              </div>
+            </div>
+
+            <div class="sm:col-span-3">
+              <label for="country" class="block text-sm/6 font-medium text-gray-900">Country</label>
+              <div class="mt-2 grid grid-cols-1">
+                <select id="country" name="country" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                  <option>Azerbaijan</option>
+                  <option>Turkey</option>
+                  <option>Russia</option>
+                </select>
+                <svg class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <div class="sm:col-span-3">
+              <label for="phone" class="block text-sm/6 font-medium text-gray-900">Phone</label>
+              <div class="mt-2">
+                <input type="number" name="phone" id="phone" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+              </div>
+            </div>
+
+            <div class="col-span-full">
+              <label for="street" class="block text-sm/6 font-medium text-gray-900">Street</label>
+              <div class="mt-2">
+                <input type="text" name="street" id="street" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+              </div>
+            </div>
+
+            <div class="sm:col-span-2 sm:col-start-1">
+              <label for="city" class="block text-sm/6 font-medium text-gray-900">City</label>
+              <div class="mt-2">
+                <input type="text" name="city" id="city" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="region" class="block text-sm/6 font-medium text-gray-900">Region</label>
+              <div class="mt-2">
+                <input type="text" name="region" id="region" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="postalCode" class="block text-sm/6 font-medium text-gray-900">Postal code</label>
+              <div class="mt-2">
+                <input type="text" name="postalCode" id="postalCode" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 flex items-center justify-end gap-x-6">
+            <button type="button" class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-500 cursor-pointer" id="closeModal">Cancel</button>
+            <button type="submit" class="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-900 cursor-pointer">Save</button>
           </div>
         </div>
-
-        <div class="sm:col-span-3">
-          <label for="contactName" class="block text-sm/6 font-medium text-gray-900">Contact Name</label>
-          <div class="mt-2">
-            <input type="text" name="contactName" id="contactName" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
-          </div>
-        </div>
-
-        <div class="sm:col-span-4">
-          <label for="contactTitle" class="block text-sm/6 font-medium text-gray-900">Contact Title</label>
-          <div class="mt-2">
-            <input id="contactTitle" name="contactTitle" type="text" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
-          </div>
-        </div>
-
-        <div class="sm:col-span-3">
-          <label for="country" class="block text-sm/6 font-medium text-gray-900">Country</label>
-          <div class="mt-2 grid grid-cols-1">
-            <select id="country" name="country" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-              <option> Azerbaijan</option>
-              <option> Turkey </option>
-              <option> Russia </option>
-            </select>
-            <svg class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
-              <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-            </svg>
-          </div>
-        </div>
-      </div>
-
-            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-        <div class="sm:col-span-3">
-          <label for="phone" class="block text-sm/6 font-medium text-gray-900">Phone</label>
-          <div class="mt-2">
-            <input type="number" name="phone" id="phone" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
-          </div>
-        </div>
-
-
-        <div class="col-span-full">
-          <label for="street" class="block text-sm/6 font-medium text-gray-900">Street</label>
-          <div class="mt-2">
-            <input type="text" name="street" id="street"  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
-          </div>
-        </div>
-
-        <div class="sm:col-span-2 sm:col-start-1">
-          <label for="city" class="block text-sm/6 font-medium text-gray-900">City</label>
-          <div class="mt-2">
-            <input type="text" name="city" id="city" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
-          </div>
-        </div>
-
-        <div class="sm:col-span-2">
-          <label for="region" class="block text-sm/6 font-medium text-gray-900">Region</label>
-          <div class="mt-2">
-            <input type="text" name="region" id="region" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
-          </div>
-        </div>
-
-        <div class="sm:col-span-2">
-          <label for="postalCode" class="block text-sm/6 font-medium text-gray-900"> Postal code</label>
-          <div class="mt-2">
-            <input type="text" name="postalCode" id="postalCode"  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
-          </div>
-        </div>
-  </div>
-
-  <div class="mt-6 flex items-center justify-end gap-x-6">
-    <button type="button" class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-500 " id="closeModal">Cancel</button>
-    <button type="submit" class="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-900 ">Save</button>
-  </div>
-</form>
-
+      </form>
     </div>
-    <div class="shadow-lg rounded-lg p-4 bg-white w-full max-w-6xl mx-auto">
 
+    <!-- COMPANY TABLE -->
+    <div class="shadow-lg rounded-lg p-4 bg-white w-full max-w-6xl mx-auto mt-6">
       <!-- Table Head -->
       <div class="flex justify-between items-center mb-4">
         <div class="grid grid-cols-6 font-semibold w-full">
@@ -105,15 +108,17 @@
           <div>Street</div>
           <div>Action</div>
         </div>
-        <button class="bg-green-600 hover:bg-blue-700 text-white px-4 py-2 rounded ml-4 transition-colors duration-200" id="openModal">
+        <button class="bg-green-600 hover:bg-blue-700 text-white px-4 py-2 rounded ml-4 transition-colors duration-200 cursor-pointer" id="openModal">
           NEW COMPANY
         </button>
       </div>
       <!-- Table Body -->
       <div id="table-body" class="space-y-2">
         <div class="grid grid-cols-6 items-center">
-          </div>
+          <!-- Table row samples can be added dynamically -->
         </div>
+      </div>
+    </div>
 
     <script src="./node.js"></script>
   </body>
