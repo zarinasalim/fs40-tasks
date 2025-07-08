@@ -2,15 +2,16 @@ const url = "https://northwind.vercel.app/api/suppliers"
 
 
 const tbody = document.querySelector('#table-body');
-const modal = document.querySelector('#modal');
-const openModal = document.querySelector('#openModal');
-const closeModal = document.querySelector('#closeModal');
-openModal.addEventListener('click', () => {
-    modal.classList.remove('hidden');
+const form = document.querySelector('#form');
+const openForm = document.querySelector('#openForm');
+const closeForm = document.querySelector('#closeForm');
+
+openForm.addEventListener('click', () => {
+    form.classList.remove('hidden');
 });
 
-closeModal.addEventListener('click', () => {
-    modal.classList.add('hidden');
+closeForm.addEventListener('click', () => {
+    form.classList.add('hidden');
 });
 
 domRender();
@@ -37,13 +38,49 @@ async function domRender(){
         <div>${data.contactName}</div>
         <div>${data.contactTitle}</div>
         <div>${data.address.street|| 'Info is not found'}</div>
-        <div><button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">
+        <div><button class="bg-red-100 hover:bg-red-200 text-purple px-3 py-1 rounded">
             Edit
         </button>
-        <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">
+        <button class="bg-yellow-300 hover:bg-yellow-600 text-purple px-3 py-1 rounded">
         Delete
         </button>
         </div> `;
   });
 }
    
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+        const {
+        companyName,
+        contactName,
+        contactTitle,
+        country,
+        phone,
+        street,
+        city,
+        region,
+        postalCode
+    } = form;
+
+        const newCompany = {
+        companyName: companyName.value,
+        contactName : contactName.value,
+        contactTitle : contactTitle.value,
+        address: {
+            country: country.value,
+            phone: phone.value,
+            street: street.value,
+            city: city.value,
+            region: region.value,
+            postalCode: postalCode.value
+        }
+    }
+
+fetch (url,{
+    method : "post", 
+    body: JSON.stringify(newCompany),
+    headers: {
+        "content-type": "application/json"
+    }
+})
+console.log(newCompany);

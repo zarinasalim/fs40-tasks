@@ -6,10 +6,10 @@
     <title>Company</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="bg-gray-100 p-6">
+  <body class="bg-pink-100 p-6">
 
-
-    <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 py-8">
+    <!--Modal-->
+    <div id="form" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 py-8">
       <form>
         <div class="border-b border-gray-900/10 pb-12 bg-white rounded-lg p-6 max-w-4xl w-full shadow-lg">
           <h2 class="text-base/7 font-semibold text-gray-900">Company Information</h2>
@@ -89,14 +89,16 @@
           </div>
 
           <div class="mt-6 flex items-center justify-end gap-x-6">
-            <button type="button" class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-500 cursor-pointer" id="closeModal">Cancel</button>
-            <button type="submit" class="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-900 cursor-pointer">Save</button>
+            <button type="button" class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-500 cursor-pointer" id="closeForm">Cancel</button>
+            <button type="submit" class="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-900 cursor-pointer" id="submit">Save</button>
           </div>
         </div>
       </form>
     </div>
 
-    <!-- COMPANY TABLE -->
+    <div class="max-w-6xl mx-auto">
+        <input type="text" id="searchInput" placeholder="Company name.." class="block w-full max-w-6xl mx-auto mb-4 p-2 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500" /> 
+   <!-- COMPANY TABLE -->
     <div class="shadow-lg rounded-lg p-4 bg-white w-full max-w-6xl mx-auto mt-6">
       <!-- Table Head -->
       <div class="flex justify-between items-center mb-4">
@@ -108,7 +110,7 @@
           <div>Street</div>
           <div>Action</div>
         </div>
-        <button class="bg-green-600 hover:bg-blue-700 text-white px-4 py-2 rounded ml-4 transition-colors duration-200 cursor-pointer" id="openModal">
+        <button class="bg-yellow-100 hover:bg-red-100 text-purple px-4 py-2 rounded ml-4 transition-colors duration-200 cursor-pointer" id="openForm">
           NEW COMPANY
         </button>
       </div>
