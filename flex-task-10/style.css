@@ -6,6 +6,13 @@ section{
 body{
     margin: 0;
 }
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col4{
+    width: calc(100%/3);
+}
 .header-item{
     height: 55px;
     background-color: #000;

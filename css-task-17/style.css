@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;   background-color: rgb(141, 253, 227);
+
+}
+div{
+    display: flex;
+    gap: 5px; 
+ 
+}
+.item{
+    display: block;
+    border-radius: 50%;
+    background-color: rgb(44, 2, 254);
+    width: 40px;
+    height: 40px;
+    animation: anim ease-in-out ;
+}
+@keyframes anim{
+
+
+
+}

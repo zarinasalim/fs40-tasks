@@ -379,3 +379,5 @@
 //     result = "Yanlshdir.";
 // }
 // alert("Operator:" + operation + "   " + "Netice:" + result);
+
+ 

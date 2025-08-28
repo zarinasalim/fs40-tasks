@@ -1,0 +1,39 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "User_1",
+            "email": "john@example.com"
+        },
+        {
+            "id": 2,
+            "name": "User_2",
+            "email": "jane@example.com"
+        },
+        {
+            "id": 3,
+            "name": "User_3",
+            "email": "user3@example.com"
+        }
+    ],
+    "posts" : [
+        {
+            "id": 1,
+            "content": "This is a post about laptops.",
+            "userId": "User_1",
+            "file": "laptop-post.txt"
+        },
+        {
+            "id": 2,
+            "content": "This is a post about smartphones.",
+            "userId": "User_2",
+            "file": "smartphone-post.txt"
+        },
+        {
+            "id": 3,
+            "content": "This is a post about tablets.",
+            "userId": "User_3",
+            "file": "tablet-post.txt"
+        }
+    ]
+}

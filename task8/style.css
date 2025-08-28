@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+font-family:"Oswald", sans-serif; 
+color: #222;
+margin-bottom: 12px;
+font-weight: 500;
+}
+.title{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+p{
+    font-family: Roboto sans-serif;
+    color: #222;
+  text-align: center;
+}
+h4{
+    font-family: "Oswald", sans-serif;;
+    text-align: center;
+}
+main{
+width: 70%;
+margin: 0 auto;
+max-width: 1320px;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    object-fit: cover;
+}
+.members{
+    padding-inline: 15px;
+    position: relative;
+}
+.overlay{
+    opacity: 0;
+    visibility: hidden;
+position: absolute;
+background-color: #ffc107ad;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+}
+a{
+   color:#222 ; 
+}
+&:hover{
+.container{
+    .overlay{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+}

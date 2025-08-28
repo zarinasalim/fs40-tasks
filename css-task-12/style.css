@@ -1,0 +1,39 @@
+.header ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 10;
+    padding: 10;
+    list-style-type: none;
+    font-size: 17px;
+    font-weight: 700;
+}
+body{
+    margin: 0;
+    font-family: Arial,sans-serif ;
+}
+header{
+    border-bottom: 3px solid lightgrey;
+}
+.header{
+    width: 75%;
+    max-width: 1140px;
+    min-width: 330px;
+    margin: auto;
+}
+.type li{
+    display: flex;
+    justify-self:auto;
+    list-style-type: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 15px 0;
+    span{
+        color: lightgrey;
+    }
+}
+.container {
+    padding: 46px 19px;
+    background-color: white;
+    padding-top:40px ;
+    margin: 10px;
+}

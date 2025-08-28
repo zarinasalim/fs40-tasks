@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "name": "fs40-tasks",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zarinasalim/fs40-tasks.git"
+  },
+  "author": "zarina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zarinasalim/fs40-tasks/issues"
+  },
+  "homepage": "https://github.com/zarinasalim/fs40-tasks#readme",
+  "keywords": [],
+  "description": ""
+}

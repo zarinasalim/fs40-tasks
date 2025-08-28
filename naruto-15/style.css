@@ -1,0 +1,101 @@
+.box{
+    position: relative;
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: 100px;
+    margin: auto;
+    overflow: hidden;
+    transition: all ease-in .7s;
+    background-color:#96ff0d ;
+    &:hover{
+        background-color: #3b3a3a;
+    }
+}
+
+.anim1{
+    position: absolute;
+    background-color:#96ff0d ;
+    width: 25px;
+    height: 25px;
+    animation: anim1 3s ease-in-out infinite;
+    top: 0;
+    left: 0;
+}
+.anim2{
+    position: absolute;
+    background-color:#ff0707;
+    width: 25px;
+    height: 25px;
+    animation: anim2 5s ease-in-out infinite;
+    top: 0;
+    left: 0;
+}
+.box img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+scale: 1;
+transition: all ease-in .7s;
+}
+
+.img1{
+    transform: translateY(0px);
+}
+.img2{
+    transform: translateY(0px) ;
+}
+.box:hover .img1{
+    transform: translateY(-305px);
+    scale: 0.5;
+}
+.box:hover .img2{
+    transform: translateY(-280px);
+    scale: 1.1;
+}
+@keyframes anim1 {
+    0% {
+        top: 0;
+        left: 0;
+      }
+      25% {
+        top: 0;
+        left: 100%;
+      }
+      50% {
+        top: 100%;
+        left: 100%;
+      }
+      75% {
+        top: 100%;
+        left: 0;
+      }
+      100% {
+        top: 0;
+        left: 0;
+      }
+    }
+    
+    @keyframes anim2{
+        0% {
+            top: 0;
+            left: 0;
+          }
+          25% {
+            top: 0;
+            left: 100%;
+          }
+          50% {
+            top: 100%;
+            left: 100%;
+          }
+          75% {
+            top: 100%;
+            left: 0;
+          }
+          100% {
+            top: 0;
+            left: 0;
+          }
+        }
